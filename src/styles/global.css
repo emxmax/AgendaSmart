@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+    --color-navbar: #10058C;
+    --color-footer: #01277C;
+    --color-filter: #0247E2;
+    --color-text-section: #797988;
+    --color-text: #1E1F44;
+    --color-burble: #F5F8FF;
+    --color-border-button: #1ACC8D;
+    --font-fallback: Raleway, system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI',
+        'Noto Sans', helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --font-secondary: Poppins, 'Segoe UI',
+}
+
+@layer base {
+
+    /* Webkit Browsers (Chrome, Safari, Edge) */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color-theme-raisin-black);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-theme-french-mauve);
+        border-radius: 5px;
+        border: 2px solid oklch(67.65% 0.1539 329.18 / 0.4);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-theme-tickle-me-pink);
+        /* Efecto hover */
+    }
+
+    /* Firefox */
+    * {
+        scrollbar-color: var(--color-theme-french-mauve) var(--color-theme-raisin-black);
+        scrollbar-width: thin;
+    }
+
+    /* Animaciones para el menú hamburguesa */
+    @keyframes hamburger-pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* Clases para el menú móvil */
+    .mobile-menu-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.3s ease-out;
+    }
+
+    .mobile-menu-hidden {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease-out;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins');
+    size-adjust: 112%;
+    ascent-override: 74%;
+    descent-override: normal;
+    line-gap-override: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('/fonts/raleway-regular-webfont.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+html {
+    font-family: 'Poppins', var(--font-fallback);
+    /* text-transform: uppercase; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
