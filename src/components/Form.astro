@@ -39,7 +39,7 @@ import Spinner from './Spinner.astro'
     <section class="flex">
      <ButtonForm text="Enviar" />
     </section>
-    <div class="hidden" id="result"></div>
+    <div  id="result"></div>
   </div>
 </form>
 <script is:inline>
@@ -72,7 +72,7 @@ form.addEventListener("submit", function (e) {
     .then(async (response) => {
         let json = await response.json();
         if (response.status === 200) {
-            result.innerHTML = json.message;
+            //result.innerHTML = json.message;
             result.style.display = "block";
             setTimeout(() => {
                 window.location.href = "./thanks";
