@@ -26,7 +26,7 @@ export const SLIDER = [
     },
     {
         AltSlider: "barber - Agenda Smart",
-        Img: "/hero/barber.jpg",
+        Img: "/hero/barber.png",
         ImgMovil: "/hero/barber_movil.png",
         breadcrumb1: "Peluquería",
         breadcrumb2: "Barbería",

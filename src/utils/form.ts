@@ -37,7 +37,7 @@ interface FormField {
 
 export const FORM_FIELDS: FormField[] = [
   {
-    id: "name",
+    id: "company",
     label: "Nombre de Contacto o Empresa:",
     path1: "M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z",
     path2:
