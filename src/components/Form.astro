@@ -1,0 +1,46 @@
+---
+import {FORM_FIELDS} from '@/utils/form.ts'
+---
+<form method="POST" id="form" class="mt-0 md:mt-0">
+  <div
+    class="flex flex-col gap-3 lg:gap-2 p-5 shadow-md font-fallback lg:p-5"
+  >
+  <h2 class="mx-auto font-black text-xl lg:font-bold text-center text-gray-800 sm:text-lg lg:text-lg lg:leading-0">
+    <span class="block lg:inline lg:text-base">¿Tienes dudas?</span>
+    <span class="block lg:inline lg:text-base">Te escribimos ahora</span>
+  </h2>
+    {
+      FORM_FIELDS.map(({label,id,path1,path2,pattern,type,placeholder,divClass,inputClass,required}) => (
+          <label for={id} class="text-sm lg:text-sm text-gray-700">
+            {label}
+          </label>
+          <div class={divClass}>
+              <div class="inset-y-0 start-0 flex items-center ps-3.5 lg:gap-0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+              <path d={path1}></path>
+              <path d={path2}></path>
+              </svg>
+              <input
+                type={type}
+                id={id}
+                placeholder={placeholder}
+                class={inputClass}
+                {...(pattern ? { pattern: pattern } : {})}
+                {...(required ? { required: true } : {})}
+              />      
+              </div>
+            </div>  
+      ))
+    }
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+    <section class="flex">
+      <button
+        type="submit"
+        class="bg-[#1ACC8D] w-full  rounded-2xl py-2 px-16 text-white font-semibold hover:bg-[#17b97e] transition-all "
+      >
+        Enviar
+      </button>
+    </section>
+    <div id="result"></div>
+  </div>
+</form>

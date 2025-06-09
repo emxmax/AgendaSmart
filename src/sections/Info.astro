@@ -1,0 +1,53 @@
+---
+import { BOXES } from "@/utils/consts.js";
+---
+<section id="beneficios"
+  class="flex flex-col mt-[420px] md:mt-42 lg:mt-24 lg:px-8 md:px-16 xl:px-48 xl:mt-24"
+>
+  <aside class="w-11/12 mx-auto lg:w-1/2 lg:mx-0">
+    <div class="mb-5 w-full lg:w-3/4">
+      <p class="flex items-center text-base text-text-section lg:text-xl">
+        Convierte cada cita en una
+        <span class="flex-1 h-px bg-gray-300 ml-2"></span>
+      </p>
+      <p class="text-lg font-black font-fallback lg:text-2xl">
+        Oportunidad de crecimiento
+      </p>
+    </div>
+    <div class="flex flex-col gap-3 w-full">
+      {
+        BOXES.map(({ title, icon, description }) => (
+          <div class="flex flex-row items-center p-2 rounded-2xl  bg-burble lg:p-6 ">
+            <div class="w-1/6 py-2 lg:px-4">
+              <img src={icon} class="mx-auto w-12" />
+            </div>
+            <div class="w-5/6 p-2 text-text">
+              <p class="font-bold text-sm font-secondary mb-1 lg:text-lg">
+                {title}
+              </p>
+              <p class="text-[12px] font-secondary lg:text-base">
+                {description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </aside>
+</section>
+<style>
+  .subtitle-line {
+    display: flex;
+    align-items: center;
+    color: #888; /* Color del subtítulo */
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .subtitle-line::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #ccc; /* Color de la línea */
+    margin-left: 8px;
+  }
+</style>

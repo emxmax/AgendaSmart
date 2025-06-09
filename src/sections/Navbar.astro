@@ -1,0 +1,106 @@
+---
+export const MENUITEMS = [
+  { title: "Inicio", path: "/" },
+  { title: "Beneficios", path: "#beneficios" },
+  { title: "Galería", path: "#galeria" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="top" class="top-0 left-0 w-full z-50 bg-navbar font-fallback">
+  <div
+    class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 lg:py-8"
+  >
+    <a href="/">
+      <img src="/logotipo.svg" alt="Logo Agenda Smart" class="h-10 w-auto" />
+    </a>
+
+    <!-- Contenedor para aplicar peer correctamente -->
+    <div class="relative">
+      <!-- Input checkbox para controlar el menú -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+      <!-- Botón hamburguesa (solo en móvil) -->
+      <label
+        for="menu-toggle"
+        class="lg:hidden text-white transform transition-transform duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+        aria-label="Abrir menú"
+      >
+        ☰
+      </label>
+
+      <!-- Navegación móvil -->
+      <nav
+        id="mobile-menu"
+        class="lg:hidden fixed top-0 left-0 z-50 w-screen h-screen bg-navbar translate-y-[-20px] opacity-0 invisible transition-all duration-300 peer-checked:translate-y-0 peer-checked:opacity-100 peer-checked:visible"
+      >
+        <div class="flex flex-col h-full">
+          <div class="flex justify-end p-4">
+            <label
+              for="menu-toggle"
+              class="text-white text-3xl cursor-pointer hover:text-gray-300 transition-colors duration-300"
+              aria-label="Cerrar menú"
+            >
+              ✕
+            </label>
+          </div>
+          <ul
+            class="flex flex-col gap-4 text-white items-center justify-center flex-grow p-8"
+          >
+            {
+              MENUITEMS.map(({ title, path }) => {
+                const isActive = currentPath === path;
+                return (
+                  <li>
+                    <a
+                      href={path}
+                      class={`relative text-lg block pb-2 transition-colors duration-300 ${
+                        isActive
+                          ? "text-white"
+                          : "text-gray-300 hover:text-white"
+                      }
+                      after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
+                      after:h-[3px] after:bg-green-400 after:rounded-full
+                      after:transition-all after:duration-300
+                      ${isActive ? "after:w-6" : "after:w-0 hover:after:w-6"}`}
+                    >
+                      {title}
+                    </a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Navegación desktop -->
+    <nav class="hidden lg:block">
+      <ul class="flex gap-10 items-center text-white">
+        {
+          MENUITEMS.map(({ title, path }) => {
+            const isActive = currentPath === path;
+            return (
+              <li>
+                <a
+                  href={path}
+                  class={`relative text-lg pb-2 transition-colors duration-300 ${
+                    isActive ? "text-white" : "text-gray-300 hover:text-white"
+                  }
+                  after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 
+                  after:h-[3px] after:bg-green-400 after:rounded-full
+                  after:transition-all after:duration-300
+                  ${isActive ? "after:w-6" : "after:w-0 hover:after:w-6"}`}
+                >
+                  {title}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

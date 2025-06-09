@@ -1,0 +1,23 @@
+---
+import "@/styles/global.css";
+import Navbar from "@/sections/Navbar.astro";
+import Footer from "@/sections/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Agenda Smart</title>
+  </head>
+  <body class="max-w-[1920px] mx-auto">
+    <Navbar />
+    <div id="app" view-transition-name="root">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>
