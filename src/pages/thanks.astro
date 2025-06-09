@@ -1,0 +1,16 @@
+---
+import ButtonForm from "@/components/ButtonForm.astro"
+import Layout from "@/layouts/Layout.astro"
+---
+
+<Layout>
+  <div
+    class="flex flex-col items-center justify-center h-screen gap-3 max-w-100 mx-auto"
+  >
+    <p class="text-3xl font-black font-fallback">Gracias por escribirnos</p>
+    <p class="flex text-xs text-text-section lg:text-xl">
+      Te responderemos en breve..
+    </p>
+    <a href="/"> <ButtonForm text="Volver al home" /></a>
+  </div>
+</Layout>
