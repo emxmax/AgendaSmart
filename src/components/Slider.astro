@@ -2,13 +2,13 @@
 import { SLIDER } from "../utils/consts";
 ---
 
-<div id="slider" class="relative overflow-hidden w-full h-[850px] mx-auto">
+<div id="slider" class="relative overflow-hidden w-full h-[600px]  mx-auto">
   <div id="slides" class="absolute inset-0">
     {
       SLIDER.length > 0 && (
         <div
           id="slider"
-          class="relative overflow-hidden w-full h-[850px] mx-auto"
+          class="relative overflow-hidden w-full h-[600px] mx-auto"
         >
           <div id="slides" class="absolute inset-0">
             {SLIDER.map(
@@ -35,7 +35,7 @@ import { SLIDER } from "../utils/consts";
                     />
                   </picture>
                   <div class="overlay flex flex-col gap-4 lg:justify-center items-start ">
-                    <div class="m-auto flex flex-col gap-3 p-4 lg:mx-4 lg:w-1/2  lg:mt-[500px] xl:mx-12">
+                    <div class="m-auto flex flex-col gap-3 p-4 lg:mx-[10%] lg:w-1/2  lg:mt-[15%] ">
                       <div class=" text-white">
                         {breadcrumb1 && (
                           <p class="inline border-2 border-border-button rounded-xl px-2 py-1 text-sm mr-2 lg:mr-4 lg:text-base">
@@ -119,12 +119,5 @@ import { SLIDER } from "../utils/consts";
     background-color: rgba(0, 100, 255, 0.4); /* azul 40% */
     pointer-events: none; /* no bloquea eventos del ratón */
     z-index: 10; /* se asegura que esté encima de la imagen */
-  }
-  .slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 </style>
