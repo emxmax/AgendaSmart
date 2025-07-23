@@ -1,7 +1,7 @@
 ---
-import "@/styles/global.css";
-import Navbar from "@/sections/Navbar.astro";
-import Footer from "@/sections/Footer.astro";
+import '@/styles/global.css';
+import Navbar from '@/sections/Navbar.astro';
+import Footer from '@/sections/Footer.astro';
 ---
 
 <!doctype html>
@@ -11,7 +11,24 @@ import Footer from "@/sections/Footer.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Agenda Smart</title>
+    <title>
+      Agenda Smart – Software web para gestionar citas, clientes e ingresos
+    </title>
+    <meta
+      name="description"
+      content="Organiza tus citas, gestiona a tus clientes y controla tus ingresos desde cualquier lugar con Agenda Smart. Un software web ideal para consultorios médicos, podologías, spas, fisioterapia, empresas de servicios y organizaciones que trabajan con agendas de citas."
+    />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78LRMPFG6Q"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-78LRMPFG6Q');
+    </script>
   </head>
   <body class="max-w-[1920px] mx-auto">
     <Navbar />

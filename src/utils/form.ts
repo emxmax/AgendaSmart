@@ -44,7 +44,8 @@ export const FORM_FIELDS: FormField[] = [
       "M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z",
     type: "text",
     placeholder: "Nombre de Contacto o Empresa",
-    pattern: "^[A-ZÁÉÍÓÚÑa-záéíóúñ]+(?:\\s[A-ZÁÉÍÓÚÑa-záéíóúñ]+)*$",
+    pattern: "^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9\s.,\-]*$",
+    required: true,
     divClass:
       "w-full bg-gray-50 border border-gray-300 text-gray-800 placeholder-gray-400 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400",
     inputClass:
@@ -58,8 +59,9 @@ export const FORM_FIELDS: FormField[] = [
     path2:
       "M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z",
     type: "email",
-    placeholder: "Correo",
+    placeholder: "mail@correo.com",
     pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$",
+    required: true,
     divClass:
       "w-full bg-gray-50 border border-gray-300 text-gray-800 placeholder-gray-400 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400",
     inputClass:
@@ -72,7 +74,7 @@ export const FORM_FIELDS: FormField[] = [
       "M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2",
     path2: "M15 6h6m-3 -3v6",
     type: "tel",
-    placeholder: "123-456-789",
+    placeholder: "987654321",
     pattern: "[0-9]{3}[0-9]{3}[0-9]{3}",
     required: true,
     divClass:
