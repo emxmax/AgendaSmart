@@ -43,7 +43,7 @@ export const BOXES = [
         icon: './info/calendar.svg',
     },
     {
-        title: 'Recordatorios automáticos',
+        title: 'Recordatorios de citas',
         description: 'Reduce ausencias con notificaciones por WhatsApp y correo.',
         icon: './info/notification.svg',
     },
